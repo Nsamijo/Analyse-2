@@ -107,12 +107,14 @@ def draw():
 
     #add all data to the chart individually otherwise it will be recognised as one chart
     for x in range(3):
-        plot.bar(x, strategies[x], label='Strategy ' + str(x + 1))
+        plot.bar(x, int(strategies[x] / 10 * 100), label='Strategy ' + str(x + 1))
     
     #set the labels
     plot.xlabel('Strategy')
     plot.ylabel('Winning Probability')
 
+    #set the Y-axis max
+    plot.axis(ymax=100)
     #set the X-axis
     plot.xticks([0, 1, 2, 3], ['1', '2', '3'])
 
